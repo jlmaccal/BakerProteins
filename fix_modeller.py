@@ -40,7 +40,7 @@ def stage_files(pdb_id, temp_dir):
 
 def recover_model(pdb_id, temp_dir):
     model_path = glob.glob(os.path.join(temp_dir, 'rosetta.B*.pdb'))[0]
-    shutil.copy(model_path, os.path.join('Proteins', pdb_id + '.pdb'))
+    shutil.copy(model_path, os.path.join('FixedModeller', pdb_id + '.pdb'))
 
 
 def get_pdb_ids():
@@ -49,7 +49,7 @@ def get_pdb_ids():
 
 
 def main():
-    os.mkdir('Proteins')
+    os.mkdir('FixedModeller')
 
     pdb_ids = get_pdb_ids()
     for pdb_id in pdb_ids:

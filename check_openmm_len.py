@@ -20,7 +20,7 @@ def main():
         print 'processing {}'.format(pdb_id)
 
         # load the system as setup
-        p = protein.Protein(os.path.join('Proteins', pdb_id + '.pdb'))
+        p = protein.Protein(os.path.join('FixedOpenMM', pdb_id + '.pdb'))
 
         # get one of the rosetta models
         r = protein.Protein(glob.glob(os.path.join('final_dataset', pdb_id, 'S_*.pdb'))[0])
